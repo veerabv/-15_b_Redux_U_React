@@ -7,18 +7,18 @@ const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INC":
       return {
-        isCounter : state.counter,
+        isCounter : state.isCounter,
         counter: state.counter + 1
       };
     case "DEC":
       return {
         counter: state.counter - 1,
-        isCounter : state.counter
+        isCounter : state.isCounter
       };
 
       case "INCREASE":
         return {
-            isCounter : state.counter,
+            isCounter : state.isCounter,
             counter : state.counter + action.amount
         }
 
