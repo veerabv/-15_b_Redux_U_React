@@ -1,23 +1,24 @@
 import classes from "./Counter.module.css";
 import { useSelector, useDispatch } from "react-redux"; // useSelector will directly give subscription to the store for this function and give acess to the component
+import { counterActions } from "../store";
 
 const Counter = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
   const show = useSelector((state) => state.isCounter);
   const toggleCounterHandler = () => {
-    dispatch({ type: "TOGGLE" });
+    dispatch(counterActions.toggle());
   };
   const incHandler = () => {
-    dispatch({ type: "INC" });
+    dispatch(counterActions.increment());
   };
 
   const decHandler = () => {
-    dispatch({ type: "DEC" });
+    dispatch(counterActions.decrement());
   };
 
   const increaseHandler = () => {
-    dispatch({ type: "INCREASE", amount: 5 });
+    dispatch(counterActions.increase(5));  // here we will not give any object , but it will create automatically behind the scenes like {payload : 10 , type : uniqueIdentifier}
   };
 
   return (
