@@ -11,6 +11,11 @@ const counterReducer = (state = { counter: 0 }, action) => {
       return {
         counter: state.counter - 1,
       };
+
+      case "INCREASE":
+        return {
+            counter : state.counter + action.amount
+        }
     default:
         return state;
   }
