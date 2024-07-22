@@ -1,6 +1,6 @@
 import classes from "./Counter.module.css";
 import { useSelector, useDispatch } from "react-redux"; // useSelector will directly give subscription to the store for this function and give acess to the component
-import { counterActions } from "../store";
+import { counterActions } from "../store/counter";
 
 const Counter = () => {
   const dispatch = useDispatch();
